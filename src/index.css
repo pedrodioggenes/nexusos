@@ -1611,3 +1611,35 @@ html {
   background: hsl(var(--muted)) !important;
   color: hsl(var(--foreground)) !important;
 }
+
+/* ============================================
+   Design System — Additional Utilities
+   (ported from Aniq-ui)
+   ============================================ */
+
+@layer utilities {
+  /* High-contrast text helpers */
+  .text-high-contrast-light {
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .text-high-contrast-dark {
+    color: rgba(255, 255, 255, 0.95);
+  }
+  .text-neutral-improved-light {
+    color: rgba(60, 60, 60, 1);
+  }
+  .text-neutral-improved-dark {
+    color: rgba(220, 220, 220, 1);
+  }
+
+  /* RTL-aware sidebar transforms */
+  .sidebar-hidden {
+    transform: translateX(-120%);
+  }
+  [dir="rtl"] .sidebar-hidden {
+    transform: translateX(120%);
+  }
+  .sidebar-visible {
+    transform: translateX(0);
+  }
+}
