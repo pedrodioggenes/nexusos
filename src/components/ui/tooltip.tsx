@@ -25,4 +25,40 @@ const TooltipContent = React.forwardRef<
 ));
 TooltipContent.displayName = TooltipPrimitive.Content.displayName;
 
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider };
+// ─── SimpleTooltip ────────────────────────────────────────────────────────────
+// One-liner wrapper for the common pattern:
+//   <SimpleTooltip content="Edit item"><Button>...</Button></SimpleTooltip>
+
+export interface SimpleTooltipProps {
+  /** Text or element shown inside the tooltip bubble */
+  content: React.ReactNode;
+  /** The element that triggers the tooltip */
+  children: React.ReactNode;
+  /** Which side of the trigger the tooltip appears on (default: "top") */
+  side?: React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>["side"];
+  /** Delay in ms before the tooltip opens (default: 300) */
+  delayDuration?: number;
+  /** Extra className forwarded to TooltipContent */
+  contentClassName?: string;
+}
+
+const SimpleTooltip = ({
+  content,
+  children,
+  side = "top",
+  delayDuration = 300,
+  contentClassName,
+}: SimpleTooltipProps) => (
+  <TooltipProvider>
+    <Tooltip delayDuration={delayDuration}>
+      <TooltipTrigger asChild>{children}</TooltipTrigger>
+      <TooltipContent side={side} className={contentClassName}>
+        {content}
+      </TooltipContent>
+    </Tooltip>
+  </TooltipProvider>
+);
+
+SimpleTooltip.displayName = "SimpleTooltip";
+
+export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider, SimpleTooltip };
