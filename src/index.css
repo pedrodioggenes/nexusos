@@ -1538,3 +1538,76 @@ html {
 .animate-fade-in-fast {
   animation: fadeInFast 180ms ease-out both;
 }
+
+/* ============================================
+   SweetAlert2 — NexusOS Theme Overrides
+   Uses NexusOS CSS vars (--card, --border,
+   --foreground, --primary) instead of the
+   Aniq monochrome palette.
+   ============================================ */
+
+:root {
+  /* Map SweetAlert2 semantic aliases to NexusOS vars */
+  --alert-bg:   hsl(var(--card));
+  --alert-text: hsl(var(--foreground));
+}
+
+/* Popup container */
+.alert-popup {
+  border-radius: 12px !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+  border: 1px solid hsl(var(--border)) !important;
+  backdrop-filter: blur(8px) !important;
+  background: hsl(var(--card)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Title */
+.alert-title {
+  font-weight: 600 !important;
+  font-size: 1.125rem !important;
+  color: hsl(var(--foreground)) !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* Body text */
+.alert-text {
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  color: hsl(var(--muted-foreground)) !important;
+  opacity: 1 !important;
+}
+
+/* Confirm button — uses brand primary (crimson red) */
+.alert-button-confirm {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  padding: 0.625rem 1.5rem !important;
+  border: none !important;
+  transition: box-shadow 0.2s ease, opacity 0.2s ease !important;
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+.alert-button-confirm:hover {
+  opacity: 0.9 !important;
+  box-shadow: 0 4px 16px hsl(var(--primary) / 0.35) !important;
+}
+
+/* Cancel button — uses card surface */
+.alert-button-cancel {
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  font-size: 0.875rem !important;
+  padding: 0.625rem 1.5rem !important;
+  border: 1px solid hsl(var(--border)) !important;
+  background: hsl(var(--secondary)) !important;
+  color: hsl(var(--secondary-foreground)) !important;
+  transition: background 0.2s ease !important;
+}
+
+.alert-button-cancel:hover {
+  background: hsl(var(--muted)) !important;
+  color: hsl(var(--foreground)) !important;
+}

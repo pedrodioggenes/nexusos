@@ -35,11 +35,13 @@ interface SortableNavItemProps {
   isDraggingAny: boolean;
   onNav: (view: HWView) => void;
   conversationCount?: number;
+  /** Generic badge count shown on any nav item */
+  badgeCount?: number;
   collapsed?: boolean;
   wobbleSeed: number;
 }
 
-function SortableNavItem({ item, isActive, isDraggingAny, onNav, conversationCount, collapsed, wobbleSeed }: SortableNavItemProps) {
+function SortableNavItem({ item, isActive, isDraggingAny, onNav, conversationCount, badgeCount, collapsed, wobbleSeed }: SortableNavItemProps) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({
     id: item.view,
   });
@@ -87,8 +89,9 @@ function SortableNavItem({ item, isActive, isDraggingAny, onNav, conversationCou
       }}
     >
       <Icon className="h-[18px] w-[18px] shrink-0" />
+      {/* Label fades in/out with sidebar expand/collapse */}
       <span
-        className="whitespace-nowrap overflow-hidden"
+        className="whitespace-nowrap overflow-hidden animate-fade-in-fast"
         style={{
           opacity: collapsed ? 0 : 1,
           maxWidth: collapsed ? 0 : 200,
@@ -99,6 +102,8 @@ function SortableNavItem({ item, isActive, isDraggingAny, onNav, conversationCou
       >
         {item.label}
       </span>
+
+      {/* Messages unread badge */}
       {item.view === 'messages' && !isDraggingAny && conversationCount && conversationCount > 0 ? (
         <>
           <NotificationBadge
@@ -112,6 +117,27 @@ function SortableNavItem({ item, isActive, isDraggingAny, onNav, conversationCou
             count={conversationCount}
             variant="dot"
             color="hsl(142 76% 36%)"
+            visible={!!collapsed}
+            maxCount={9}
+            easing={easing}
+          />
+        </>
+      ) : null}
+
+      {/* Generic badge count (expanded: pill label; collapsed: red dot) */}
+      {item.view !== 'messages' && !isDraggingAny && badgeCount && badgeCount > 0 ? (
+        <>
+          <NotificationBadge
+            count={badgeCount}
+            variant="inline"
+            color="hsl(var(--destructive))"
+            visible={!collapsed}
+            easing={easing}
+          />
+          <NotificationBadge
+            count={badgeCount}
+            variant="dot"
+            color="hsl(var(--destructive))"
             visible={!!collapsed}
             maxCount={9}
             easing={easing}
@@ -150,6 +176,8 @@ interface HWDraggableSidebarProps {
   sidebarOrder: string[];
   onOrderChange: (order: string[]) => void;
   conversationCount?: number;
+  /** Map of view → badge number for any nav item */
+  badgeCounts?: Record<string, number>;
   collapsed?: boolean;
 }
 
@@ -160,6 +188,7 @@ export function HWDraggableSidebar({
   sidebarOrder,
   onOrderChange,
   conversationCount,
+  badgeCounts = {},
   collapsed = false,
 }: HWDraggableSidebarProps) {
   const [activeId, setActiveId] = useState<string | null>(null);
@@ -223,6 +252,7 @@ export function HWDraggableSidebar({
               isDraggingAny={isDraggingAny}
               onNav={onNav}
               conversationCount={item.view === 'messages' ? conversationCount : undefined}
+              badgeCount={badgeCounts[item.view]}
               collapsed={collapsed}
               wobbleSeed={wobbleSeeds.current[item.view] || 0}
             />
