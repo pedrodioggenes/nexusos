@@ -1,4 +1,6 @@
-import { Navigate, Outlet, useNavigate } from "react-router-dom";
+import { Navigate, Outlet, useNavigate, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
+import { DotPattern } from "@/components/ui/dot-pattern";
 import { useAuth } from "@/contexts/AuthContext";
 import { FinanceiroSidebar } from "./FinanceiroSidebar";
 import { Button } from "@/components/ui/button";
@@ -24,6 +26,7 @@ export function FinanceiroLayout() {
     localStorage.getItem("financeiro-sidebar-collapsed") === "true"
   );
   const isMobile = useIsMobile();
+  const location = useLocation();
   const { canAccessPortal } = useAccessControl();
 
   useEffect(() => {
@@ -40,7 +43,8 @@ export function FinanceiroLayout() {
   const initials = displayName.slice(0, 2).toUpperCase();
 
   return (
-    <div className="h-[100dvh] w-full flex flex-col overflow-hidden bg-background">
+    <div className="h-[100dvh] w-full flex flex-col overflow-hidden bg-background relative">
+      <DotPattern className="absolute inset-0 opacity-[0.02] pointer-events-none z-0 [mask-image:radial-gradient(ellipse_80%_80%_at_50%_20%,black_40%,transparent_100%)]" width={20} height={20} cx={1} cy={1} cr={1} />
       <header className={cn(
         "shrink-0 flex items-center justify-between gap-3 px-3 h-12 relative z-40",
         "bg-card border-b border-border"
@@ -128,7 +132,27 @@ export function FinanceiroLayout() {
 
         <ScrollArea className="flex-1">
           <main className="p-3 md:p-4 max-w-7xl mx-auto overflow-x-hidden">
-            <Outlet />
+            <AnimatePresence mode="wait">
+
+              <motion.div
+
+                key={location.pathname}
+
+                initial={{ opacity: 0, y: 8 }}
+
+                animate={{ opacity: 1, y: 0 }}
+
+                exit={{ opacity: 0, y: -8 }}
+
+                transition={{ duration: 0.15, ease: "easeOut" }}
+
+              >
+
+                <Outlet />
+
+              </motion.div>
+
+            </AnimatePresence>
           </main>
         </ScrollArea>
       </div>

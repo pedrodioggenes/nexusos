@@ -75,7 +75,7 @@ function DeskCard({ title, icon, children, delay = 0, onClick, accent }: DeskCar
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, delay }}
       className="rounded-xl p-4 cursor-pointer transition-all duration-200 h-full w-full flex flex-col overflow-hidden
-        hover:shadow-lg hover:shadow-black/20"
+        hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01] backdrop-blur-sm"
       style={{
         backgroundColor: '#18181B',
         border: '1px solid #27272A',

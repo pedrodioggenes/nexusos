@@ -1,4 +1,5 @@
-import { Navigate, Outlet, useNavigate } from "react-router-dom";
+import { Navigate, Outlet, useNavigate, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import { useAuth } from "@/contexts/AuthContext";
 import { RHSidebar } from "./RHSidebar";
 import { Button } from "@/components/ui/button";
@@ -28,6 +29,7 @@ export function RHLayout() {
     return localStorage.getItem('rh-sidebar-collapsed') === 'true';
   });
   const isMobile = useIsMobile();
+  const location = useLocation();
   const { canAccessPortal } = useAccessControl();
 
   useEffect(() => {
@@ -158,7 +160,27 @@ export function RHLayout() {
 
         <ScrollArea className="flex-1">
           <main className="p-3 md:p-4 max-w-7xl mx-auto overflow-x-hidden">
-            <Outlet />
+            <AnimatePresence mode="wait">
+
+              <motion.div
+
+                key={location.pathname}
+
+                initial={{ opacity: 0, y: 8 }}
+
+                animate={{ opacity: 1, y: 0 }}
+
+                exit={{ opacity: 0, y: -8 }}
+
+                transition={{ duration: 0.15, ease: "easeOut" }}
+
+              >
+
+                <Outlet />
+
+              </motion.div>
+
+            </AnimatePresence>
           </main>
         </ScrollArea>
       </div>

@@ -1,4 +1,5 @@
 import { BlurFade } from "@/components/ui/blur-fade";
+import { AnimatedCounter } from "@/components/ui/animated-counter";
 import { Card } from "@/components/ui/card";
 import { Users, Clock, TreePine, UserPlus, TrendingUp, AlertCircle } from "lucide-react";
 import { useAuth } from "@/contexts/AuthContext";
@@ -41,49 +42,49 @@ export default function RHHome() {
       {/* KPI Cards */}
       <BlurFade delay={0.1}>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <Card className="p-4 bg-card border-border">
+          <Card className="p-4 bg-card border-border hover:scale-[1.01]">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-lg bg-module-rh/10 flex items-center justify-center">
                 <Users className="h-5 w-5 text-module-rh" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-foreground">{employees.length}</p>
+                <p className="text-2xl font-bold text-foreground"><AnimatedCounter value={employees.length} color="text-foreground" duration={1.2} /></p>
                 <p className="text-xs text-muted-foreground">Colaboradores</p>
               </div>
             </div>
           </Card>
 
-          <Card className="p-4 bg-card border-border">
+          <Card className="p-4 bg-card border-border hover:scale-[1.01]">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-lg bg-green-500/10 flex items-center justify-center">
                 <Clock className="h-5 w-5 text-green-500" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-foreground">{employees.length - onLeaveToday}</p>
+                <p className="text-2xl font-bold text-foreground"><AnimatedCounter value={employees.length - onLeaveToday} color="text-foreground" duration={1.2} /></p>
                 <p className="text-xs text-muted-foreground">Presentes Hoje</p>
               </div>
             </div>
           </Card>
 
-          <Card className="p-4 bg-card border-border">
+          <Card className="p-4 bg-card border-border hover:scale-[1.01]">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-lg bg-amber-500/10 flex items-center justify-center">
                 <TreePine className="h-5 w-5 text-amber-500" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-foreground">{onLeaveToday}</p>
+                <p className="text-2xl font-bold text-foreground"><AnimatedCounter value={onLeaveToday} color="text-foreground" duration={1.2} /></p>
                 <p className="text-xs text-muted-foreground">Em Férias/Licença</p>
               </div>
             </div>
           </Card>
 
-          <Card className="p-4 bg-card border-border">
+          <Card className="p-4 bg-card border-border hover:scale-[1.01]">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-lg bg-purple-500/10 flex items-center justify-center">
                 <UserPlus className="h-5 w-5 text-purple-500" />
               </div>
               <div>
-                <p className="text-2xl font-bold text-foreground">{activeCandidates}</p>
+                <p className="text-2xl font-bold text-foreground"><AnimatedCounter value={activeCandidates} color="text-foreground" duration={1.2} /></p>
                 <p className="text-xs text-muted-foreground">Candidatos Ativos</p>
               </div>
             </div>

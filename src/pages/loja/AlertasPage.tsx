@@ -43,15 +43,15 @@ export default function AlertasPage() {
 
       {/* Summary */}
       <div className="grid grid-cols-3 gap-3">
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Abertos</p>
           <p className="text-2xl font-bold text-foreground">{openCount}</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Críticos</p>
           <p className={cn("text-2xl font-bold", critCount > 0 ? "text-destructive" : "text-success")}>{critCount}</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Total</p>
           <p className="text-2xl font-bold text-foreground">{localAlertas.length}</p>
         </div>

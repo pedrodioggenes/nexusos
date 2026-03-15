@@ -62,22 +62,22 @@ export default function ReposicaoPage() {
 
       {/* KPIs */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-xs text-muted-foreground">Pendentes</p>
           <p className="text-2xl font-bold text-warning">{stats.pending}</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <div className="flex items-center gap-1.5">
             <AlertTriangle className="h-3.5 w-3.5 text-destructive" />
             <p className="text-xs text-muted-foreground">Críticos</p>
           </div>
           <p className="text-2xl font-bold text-destructive">{stats.critical}</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-xs text-muted-foreground">Aprovados</p>
           <p className="text-2xl font-bold text-success">{stats.approved}</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-xs text-muted-foreground">Qtde Total Pendente</p>
           <p className="text-2xl font-bold text-foreground">{stats.totalQty.toLocaleString("pt-BR")}</p>
         </div>

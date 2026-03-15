@@ -124,19 +124,19 @@ export default function PutawayPage() {
 
       {/* KPI Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-xs text-muted-foreground">Pendentes</p>
           <p className="text-2xl font-bold text-foreground">{stats.pending}</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-xs text-muted-foreground">Em Curso</p>
           <p className="text-2xl font-bold text-warning">{stats.in_progress}</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-xs text-muted-foreground">Concluídos</p>
           <p className="text-2xl font-bold text-success">{stats.completed}</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-xs text-muted-foreground">Itens Total</p>
           <p className="text-2xl font-bold text-foreground">{stats.total_qty}</p>
         </div>

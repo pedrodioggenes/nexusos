@@ -167,7 +167,7 @@ export default function KPIs() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Channel KPIs */}
         <BlurFade delay={0.1}>
-          <div className="rounded-xl border border-border bg-card p-4">
+          <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
             <div className="flex items-center gap-2 mb-4">
               <BarChart3 className="h-4 w-4 text-app-gestao" />
               <h3 className="text-sm font-semibold">KPIs por Canal</h3>
@@ -217,7 +217,7 @@ export default function KPIs() {
 
         {/* Funnel */}
         <BlurFade delay={0.15}>
-          <div className="rounded-xl border border-border bg-card p-4">
+          <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
             <div className="flex items-center gap-2 mb-4">
               <Target className="h-4 w-4 text-app-gestao" />
               <h3 className="text-sm font-semibold">Funil de Marketing</h3>

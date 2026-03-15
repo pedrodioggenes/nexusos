@@ -29,7 +29,7 @@ export default function ROICPage() {
           const isUp = k.value > k.prev;
           const isPositive = k.label === "Spread de Valor" ? k.value > 0 : k.value > WACC;
           return (
-            <div key={k.label} className="rounded-xl border border-border bg-card p-4">
+            <div key={k.label} className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
               <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">{k.label}</p>
               <p className={cn("text-xl font-bold", isPositive ? "text-success" : "text-foreground")}>
                 {k.isCurrency ? formatCurrency(k.value) : `${k.value.toFixed(1)}${k.unit}`}
@@ -89,7 +89,7 @@ export default function ROICPage() {
       </div>
 
       {/* Evolution Chart */}
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <h3 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
           <RefreshCw className="h-4 w-4 text-app-financeiro" />
           Evolução Trimestral

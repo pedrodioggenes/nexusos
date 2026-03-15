@@ -90,7 +90,7 @@ export default function RentabilidadePage() {
       </div>
 
       {/* Ranking Table */}
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <div className="flex items-center gap-2 mb-3">
           <BarChart3 className="h-4 w-4 text-app-loja" />
           <h3 className="text-sm font-semibold text-foreground">Ranking de Seções</h3>
@@ -130,7 +130,7 @@ export default function RentabilidadePage() {
       </div>
 
       {/* IPE Chart */}
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <h3 className="text-sm font-semibold text-foreground mb-3">IPE por Seção</h3>
         <ResponsiveContainer width="100%" height={250}>
           <BarChart data={data}>

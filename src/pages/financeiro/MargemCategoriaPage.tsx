@@ -22,7 +22,7 @@ export default function MargemCategoriaPage() {
       <PageHeader title="Margem de Contribuição por Categoria" description="Ranking IMC e análise de rentabilidade" />
 
       {/* Horizontal Bar Chart */}
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <h3 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
           <PieChart className="h-4 w-4 text-app-financeiro" />
           Ranking IMC por Categoria

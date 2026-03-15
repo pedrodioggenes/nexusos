@@ -79,7 +79,7 @@ export default function LojaDashboard() {
       {/* KPI Cards */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
         {kpis.map((kpi) => (
-          <div key={kpi.label} className="rounded-xl border border-border bg-card p-4">
+          <div key={kpi.label} className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
             <p className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1">{kpi.label}</p>
             <p className="text-xl font-bold text-foreground">{kpi.value}</p>
             <div className="flex items-center gap-1 mt-1">
@@ -96,7 +96,7 @@ export default function LojaDashboard() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Alerts */}
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <div className="flex items-center gap-2 mb-3">
             <AlertTriangle className="h-4 w-4 text-app-loja" />
             <h3 className="text-sm font-semibold text-foreground">Alertas Ativos ({activeAlerts.length})</h3>
@@ -118,7 +118,7 @@ export default function LojaDashboard() {
         </div>
 
         {/* Top / Bottom Seções */}
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <div className="flex items-center gap-2 mb-3">
             <BarChart3 className="h-4 w-4 text-app-loja" />
             <h3 className="text-sm font-semibold text-foreground">R$/m² por Seção</h3>
@@ -152,7 +152,7 @@ export default function LojaDashboard() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Perdas da Semana */}
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <div className="flex items-center gap-2 mb-3">
             <TrendingUp className="h-4 w-4 text-app-loja" />
             <h3 className="text-sm font-semibold text-foreground">Perdas da Semana por Tipo</h3>
@@ -172,7 +172,7 @@ export default function LojaDashboard() {
         </div>
 
         {/* Position in Network */}
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <div className="flex items-center gap-2 mb-3">
             <Store className="h-4 w-4 text-app-loja" />
             <h3 className="text-sm font-semibold text-foreground">Posição na Rede (IPC)</h3>

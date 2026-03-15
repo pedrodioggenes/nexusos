@@ -41,7 +41,7 @@ export function StatCard({
 }: StatCardProps) {
   return (
     <div className={cn(
-      'stat-card animate-fade-in',
+      'stat-card animate-fade-in transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]',
       variantStyles[variant],
       className
     )}>

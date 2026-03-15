@@ -87,19 +87,19 @@ export default function ContagemCiclicaPage() {
 
       {/* KPI Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-xs text-muted-foreground">Pendentes</p>
           <p className="text-2xl font-bold text-foreground">{stats.pending}</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-xs text-muted-foreground">Contados (aguardando)</p>
           <p className="text-2xl font-bold text-warning">{stats.counted}</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-xs text-muted-foreground">Aprovados</p>
           <p className="text-2xl font-bold text-success">{stats.approved}</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-xs text-muted-foreground">Acurácia Média</p>
           <p className="text-2xl font-bold text-foreground">{stats.accuracy !== null ? `${stats.accuracy}%` : "—"}</p>
         </div>

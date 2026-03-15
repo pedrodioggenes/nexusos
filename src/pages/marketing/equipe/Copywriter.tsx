@@ -56,7 +56,7 @@ const config: TeamAreaConfig = {
     </div>
   ),
   bottomSection: () => (
-    <div className="rounded-xl border border-border bg-card p-4">
+    <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
       <h3 className="text-sm font-semibold mb-3">Tom de Voz da Marca</h3>
       <div className="flex flex-wrap gap-2">
         <Badge variant="outline">Acolhedor</Badge>

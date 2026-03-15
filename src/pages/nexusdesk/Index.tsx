@@ -33,6 +33,7 @@ import { useIsMobile } from "@/hooks/use-mobile";
 import { useHWOffHoursCheck } from "@/hooks/useHWOffHoursCheck";
 import { HWOffHoursGuard } from "@/components/nexusdesk/HWOffHoursGuard";
 import { useHWPushNotifications } from "@/hooks/useHWPushNotifications";
+import { DotPattern } from "@/components/ui/dot-pattern";
 
 function useSidebarCollapse(key: string, defaultValue = false) {
   const [collapsed, setCollapsed] = useState(() => {
@@ -186,7 +187,11 @@ function HyperWorksPageInner() {
     <WidgetActionsContext.Provider value={widgetActions}>
     <HWPresenceProvider>
     <HWSettingsProvider containerRef={containerRef}>
-    <div ref={containerRef} className="h-[100dvh] flex flex-col lg:flex-row overflow-hidden bg-background">
+    <div ref={containerRef} className="h-[100dvh] flex flex-col lg:flex-row overflow-hidden bg-background relative">
+      <DotPattern
+        className="absolute inset-0 opacity-[0.025] pointer-events-none z-0 [mask-image:radial-gradient(ellipse_70%_70%_at_50%_50%,black_40%,transparent_100%)]"
+        width={20} height={20} cx={1} cy={1} cr={1}
+      />
 
       {/* Off-hours access guard */}
       {showGuard && (

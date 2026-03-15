@@ -45,7 +45,7 @@ export default function RupturasPage() {
 
       {/* KPIs */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-xs text-muted-foreground">Total em Risco</p>
           <p className="text-2xl font-bold text-foreground">{stats.total}</p>
         </div>

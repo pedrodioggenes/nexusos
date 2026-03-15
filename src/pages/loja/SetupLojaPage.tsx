@@ -70,7 +70,7 @@ export default function SetupLojaPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Áreas */}
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <div className="flex items-center gap-2 mb-3">
             <Sliders className="h-4 w-4 text-app-loja" />
             <h3 className="text-sm font-semibold text-foreground">Área por Seção (m²)</h3>
@@ -100,7 +100,7 @@ export default function SetupLojaPage() {
         </div>
 
         {/* Markup Meta */}
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <h3 className="text-sm font-semibold text-foreground mb-3">Markup Meta por Categoria</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-xs">
@@ -125,7 +125,7 @@ export default function SetupLojaPage() {
         </div>
 
         {/* Limites de Alerta */}
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <h3 className="text-sm font-semibold text-foreground mb-3">Limites de Alerta</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-xs">

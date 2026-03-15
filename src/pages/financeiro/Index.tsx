@@ -39,7 +39,7 @@ export default function FinanceiroDashboard() {
       {/* KPI Row */}
       <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
         {mockKPIs.map((kpi) => (
-          <div key={kpi.label} className="rounded-xl border border-border bg-card p-4">
+          <div key={kpi.label} className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
             <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">{kpi.label}</p>
             <p className="text-xl font-bold text-foreground">{kpi.value}</p>
             <div className="flex items-center gap-1 mt-1">
@@ -63,7 +63,7 @@ export default function FinanceiroDashboard() {
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
           {mockCCC.map((item) => (
-            <div key={item.label} className="rounded-xl border border-border bg-card p-4">
+            <div key={item.label} className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
               <div className="flex items-center justify-between mb-1">
                 <p className="text-[10px] uppercase tracking-wider text-muted-foreground">{item.label}</p>
                 <div className={cn("h-2 w-2 rounded-full",
@@ -77,7 +77,7 @@ export default function FinanceiroDashboard() {
       </div>
 
       {/* 12-month KPI Evolution Chart */}
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <h2 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
           <TrendingUp className="h-4 w-4 text-app-financeiro" />
           Evolução 12 Meses — Margens e CCC
@@ -120,7 +120,7 @@ export default function FinanceiroDashboard() {
 
       {/* Ranking */}
       <div className="grid md:grid-cols-2 gap-4">
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
             <TrendingUp className="h-4 w-4 text-success" />
             Top 3 Lojas — MO%
@@ -134,7 +134,7 @@ export default function FinanceiroDashboard() {
             ))}
           </div>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <h3 className="text-sm font-semibold text-foreground mb-3 flex items-center gap-2">
             <BarChart3 className="h-4 w-4 text-destructive" />
             Bottom 3 Lojas — MO%

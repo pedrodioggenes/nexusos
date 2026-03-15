@@ -93,7 +93,7 @@ export default function SimuladorLayoutPage() {
       />
 
       {/* Slider inputs */}
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <div className="flex items-center gap-2 mb-3">
           <Move className="h-4 w-4 text-module-loja" />
           <h3 className="text-sm font-semibold text-foreground">Redistribuir Áreas</h3>

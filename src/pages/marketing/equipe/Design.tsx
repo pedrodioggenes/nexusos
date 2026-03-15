@@ -19,7 +19,7 @@ const config: TeamAreaConfig = {
   ],
   statLabels: ["Total Demandas", "Em Produção", "Aguardando Aprovação", "Aprovadas"],
   bottomSection: () => (
-    <div className="rounded-xl border border-border bg-card p-4">
+    <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
       <div className="flex items-center gap-2 mb-4">
         <Palette className="h-4 w-4 text-app-gestao" />
         <h3 className="text-sm font-semibold">Identidade Visual</h3>

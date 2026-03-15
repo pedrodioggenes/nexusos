@@ -91,11 +91,14 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={cn(
-          "rounded-xl border border-border bg-card text-card-foreground transition-all duration-200",
+          "rounded-xl border border-border bg-card text-card-foreground",
+          // Premium transitions + hover effects
+          "transition-all duration-200",
+          "hover:border-white/10 hover:shadow-lg hover:shadow-black/20",
           // When glass is active the inline style overrides bg/border; keep the class for
           // browsers that don't support backdrop-filter (the @supports fallback keeps the
           // solid card background visible)
-          isGlass && "relative overflow-hidden",
+          isGlass && "relative overflow-hidden backdrop-blur-md",
           className
         )}
         style={{

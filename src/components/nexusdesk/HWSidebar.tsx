@@ -113,7 +113,7 @@ function SidebarContent({
 
   return (
     <TooltipProvider delayDuration={0}>
-      <div className="h-full flex flex-col overflow-hidden bg-festval-graphite">
+      <div className="h-full flex flex-col overflow-hidden bg-festval-graphite/95">
         {/* Header */}
         <div className="h-12 flex items-center shrink-0" style={{ padding: collapsed ? '0 8px' : '0 16px', transition: 'padding 400ms cubic-bezier(0.32, 0.72, 0, 1)' }}>
           {collapsed ?
@@ -574,7 +574,7 @@ export function HWSidebar(props: HWSidebarProps & {mobileOpen?: boolean;onMobile
 
   return (
     <aside
-      className="shrink-0 h-full hidden lg:block overflow-hidden"
+      className="shrink-0 h-full hidden lg:block overflow-hidden backdrop-blur-md"
       style={{
         width: props.collapsed ? 56 : 240,
         backgroundColor: 'hsl(var(--festval-graphite))',

@@ -30,7 +30,7 @@ function KPICard({ data }: { data: KPICardData }) {
     : data.variation_type === "negative" ? "text-red-500" : "text-muted-foreground";
 
   return (
-    <Card className="p-4 bg-card border-border">
+    <Card className="p-4 bg-card border-border hover:scale-[1.01]">
       <p className="text-xs text-muted-foreground truncate">{data.label}</p>
       <div className="flex items-end justify-between mt-1 gap-2">
         <div className="min-w-0 flex-1">

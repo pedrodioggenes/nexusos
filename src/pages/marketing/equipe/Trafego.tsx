@@ -19,7 +19,7 @@ const config: TeamAreaConfig = {
   ],
   extraSection: () => (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <div className="flex items-center gap-2 mb-3">
           <div className="h-4 w-4 rounded bg-gradient-to-br from-module-gestao to-primary" />
           <h4 className="text-sm font-medium">Meta Ads</h4>
@@ -40,7 +40,7 @@ const config: TeamAreaConfig = {
         </div>
       </div>
 
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <div className="flex items-center gap-2 mb-3">
           <div className="h-4 w-4 rounded bg-gradient-to-br from-amber-500 to-orange-500" />
           <h4 className="text-sm font-medium">Google Ads</h4>
@@ -61,7 +61,7 @@ const config: TeamAreaConfig = {
         </div>
       </div>
 
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <div className="flex items-center gap-2 mb-3">
           <div className="h-4 w-4 rounded bg-gradient-to-br from-destructive to-pink-500" />
           <h4 className="text-sm font-medium">TikTok Ads</h4>

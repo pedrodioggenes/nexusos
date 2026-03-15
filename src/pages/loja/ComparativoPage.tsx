@@ -81,7 +81,7 @@ export default function ComparativoPage() {
       {/* IPC Ranking */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {ipcRanking.map((l, i) => (
-          <div key={l.id} className="rounded-xl border border-border bg-card p-4">
+          <div key={l.id} className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
             <div className="flex items-center gap-3 mb-3">
               <div className={cn("h-10 w-10 rounded-xl flex items-center justify-center font-bold text-lg",
                 i === 0 ? "bg-app-loja/20 text-app-loja" : "bg-muted text-muted-foreground"
@@ -124,7 +124,7 @@ export default function ComparativoPage() {
       </div>
 
       {/* Scatter Chart */}
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <h3 className="text-sm font-semibold text-foreground mb-3">Dispersão: R$/m² vs IP%</h3>
         <ResponsiveContainer width="100%" height={250}>
           <ScatterChart>
@@ -146,7 +146,7 @@ export default function ComparativoPage() {
       </div>
 
       {/* IPC Pesos */}
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <h3 className="text-sm font-semibold text-foreground mb-3">Pesos do IPC</h3>
         <div className="flex gap-2 flex-wrap">
           {configIPC.map(cfg => (

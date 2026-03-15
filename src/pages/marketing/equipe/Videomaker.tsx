@@ -31,7 +31,7 @@ const config: TeamAreaConfig = {
 
     return (
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <div className="flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-destructive/10 flex items-center justify-center">
               <Play className="h-4 w-4 text-destructive" />
@@ -42,7 +42,7 @@ const config: TeamAreaConfig = {
             </div>
           </div>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <div className="flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-module-gestao/10 flex items-center justify-center">
               <Film className="h-4 w-4 text-module-gestao" />
@@ -53,7 +53,7 @@ const config: TeamAreaConfig = {
             </div>
           </div>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <div className="flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-accent/10 flex items-center justify-center">
               <Clapperboard className="h-4 w-4 text-accent" />
@@ -64,7 +64,7 @@ const config: TeamAreaConfig = {
             </div>
           </div>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <div className="flex items-center gap-3">
             <div className="h-9 w-9 rounded-lg bg-primary/10 flex items-center justify-center">
               <Video className="h-4 w-4 text-primary" />
@@ -79,7 +79,7 @@ const config: TeamAreaConfig = {
     );
   },
   bottomSection: () => (
-    <div className="rounded-xl border border-border bg-card p-4">
+    <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
       <div className="flex items-center gap-2 mb-3">
         <Clapperboard className="h-4 w-4 text-module-gestao" />
         <h3 className="text-sm font-semibold">Recursos de Produção</h3>

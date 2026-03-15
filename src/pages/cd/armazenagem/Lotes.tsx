@@ -73,25 +73,25 @@ export default function LotesPage() {
 
       {/* KPI Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-xs text-muted-foreground">Total de Lotes</p>
           <p className="text-2xl font-bold text-foreground">{stats.total}</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <div className="flex items-center gap-1.5">
             <AlertTriangle className="h-3.5 w-3.5 text-warning" />
             <p className="text-xs text-muted-foreground">Vencendo (7d)</p>
           </div>
           <p className="text-2xl font-bold text-warning">{stats.expiring7d}</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <div className="flex items-center gap-1.5">
             <Clock className="h-3.5 w-3.5 text-destructive" />
             <p className="text-xs text-muted-foreground">Vencidos</p>
           </div>
           <p className="text-2xl font-bold text-destructive">{stats.expired}</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-xs text-muted-foreground">Bloqueados</p>
           <p className="text-2xl font-bold text-foreground">{stats.blocked}</p>
         </div>

@@ -1,4 +1,5 @@
-import { Navigate, Outlet, useNavigate } from "react-router-dom";
+import { Navigate, Outlet, useNavigate, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import { useAuth } from "@/contexts/AuthContext";
 import { MarketingSidebar } from "./MarketingSidebar";
 import { Button } from "@/components/ui/button";
@@ -29,6 +30,7 @@ export function MarketingLayout() {
     return localStorage.getItem('marketing-sidebar-collapsed') === 'true';
   });
   const isMobile = useIsMobile();
+  const location = useLocation();
   const { canAccessPortal } = useAccessControl();
 
   // Persist sidebar collapsed state
@@ -175,7 +177,27 @@ export function MarketingLayout() {
         {/* Main Content */}
         <ScrollArea className="flex-1" orientation="both">
           <main className="p-3 md:p-4 max-w-7xl mx-auto w-full min-w-0">
-            <Outlet />
+            <AnimatePresence mode="wait">
+
+              <motion.div
+
+                key={location.pathname}
+
+                initial={{ opacity: 0, y: 8 }}
+
+                animate={{ opacity: 1, y: 0 }}
+
+                exit={{ opacity: 0, y: -8 }}
+
+                transition={{ duration: 0.15, ease: "easeOut" }}
+
+              >
+
+                <Outlet />
+
+              </motion.div>
+
+            </AnimatePresence>
           </main>
         </ScrollArea>
       </div>

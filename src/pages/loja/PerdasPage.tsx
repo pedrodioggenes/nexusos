@@ -95,17 +95,17 @@ export default function PerdasPage() {
 
       {/* KPI Row */}
       <div className="grid grid-cols-3 gap-3">
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1">IP% Geral</p>
           <p className={cn("text-2xl font-bold", getIPColor(ipTotal ?? 0))}>{formatPercent(ipTotal)}</p>
           <p className="text-[10px] text-muted-foreground mt-1">da receita bruta</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Total Perdas</p>
           <p className="text-2xl font-bold text-destructive">{formatMoney(perdaTotal)}</p>
           <p className="text-[10px] text-muted-foreground mt-1">período atual</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Registros</p>
           <p className="text-2xl font-bold text-foreground">{perdas.length}</p>
           <p className="text-[10px] text-muted-foreground mt-1">ocorrências</p>
@@ -114,7 +114,7 @@ export default function PerdasPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* IP% por seção */}
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <h3 className="text-sm font-semibold text-foreground mb-3">IP% por Seção</h3>
           <div className="space-y-2">
             {ipPorSecao.map(sec => (
@@ -133,7 +133,7 @@ export default function PerdasPage() {
         </div>
 
         {/* Composição por tipo */}
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <h3 className="text-sm font-semibold text-foreground mb-3">Composição por Tipo</h3>
           <ResponsiveContainer width="100%" height={200}>
             <PieChart>
@@ -150,7 +150,7 @@ export default function PerdasPage() {
       </div>
 
       {/* Evolução Semanal */}
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <h3 className="text-sm font-semibold text-foreground mb-3">Evolução Semanal de Perdas (12 semanas)</h3>
         <ResponsiveContainer width="100%" height={250}>
           <BarChart data={evolucaoData}>
@@ -168,7 +168,7 @@ export default function PerdasPage() {
       </div>
 
       {/* Top SKUs */}
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <h3 className="text-sm font-semibold text-foreground mb-3">Top 5 SKUs por Perda</h3>
         <div className="space-y-2">
           {topSkusPorPerda.map((s, i) => (

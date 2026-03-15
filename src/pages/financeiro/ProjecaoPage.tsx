@@ -52,7 +52,7 @@ export default function ProjecaoPage() {
       </div>
 
       {/* Chart */}
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <h3 className="text-sm font-semibold text-foreground mb-4">Receita Projetada vs Meta</h3>
         <div className="h-[260px]">
           <ResponsiveContainer width="100%" height="100%">

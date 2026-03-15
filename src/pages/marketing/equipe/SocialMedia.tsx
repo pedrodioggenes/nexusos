@@ -23,7 +23,7 @@ const config: TeamAreaConfig = {
   ],
   extraSection: () => (
     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <div className="flex items-center gap-3">
           <div className="p-2 rounded-lg bg-primary/10">
             <Instagram className="h-5 w-5 text-primary" />
@@ -34,7 +34,7 @@ const config: TeamAreaConfig = {
           </div>
         </div>
       </div>
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <div className="flex items-center gap-3">
           <div className="p-2 rounded-lg bg-blue-500/10">
             <Facebook className="h-5 w-5 text-blue-500" />
@@ -45,7 +45,7 @@ const config: TeamAreaConfig = {
           </div>
         </div>
       </div>
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <div className="flex items-center gap-3">
           <div className="p-2 rounded-lg bg-destructive/10">
             <Youtube className="h-5 w-5 text-destructive" />
@@ -56,7 +56,7 @@ const config: TeamAreaConfig = {
           </div>
         </div>
       </div>
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <div className="flex items-center gap-3">
           <div className="p-2 rounded-lg bg-emerald-500/10">
             <MessageCircle className="h-5 w-5 text-emerald-500" />

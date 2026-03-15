@@ -25,7 +25,7 @@ export default function CapitalGiroPage() {
           const val = current[m.key];
           const sem = getSemaforo(val, m.meta, m.limA, m.limV, !m.lowerBetter);
           return (
-            <div key={m.key} className="rounded-xl border border-border bg-card p-4">
+            <div key={m.key} className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
               <div className="flex items-center justify-between mb-1">
                 <p className="text-[10px] uppercase tracking-wider text-muted-foreground">{m.label}</p>
                 <div className={cn("h-2.5 w-2.5 rounded-full", sem === "green" && "bg-success", sem === "yellow" && "bg-warning", sem === "red" && "bg-destructive")} />
@@ -39,11 +39,11 @@ export default function CapitalGiroPage() {
 
       {/* NCG + ICDF */}
       <div className="grid md:grid-cols-2 gap-3">
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">NCG — Necessidade de Capital de Giro</p>
           <p className="text-xl font-bold text-foreground">{formatCurrency(current.ncg)}</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <div className="flex items-center justify-between">
             <p className="text-[10px] uppercase tracking-wider text-muted-foreground mb-1">ICDF — Cobertura de Disponibilidades</p>
             {current.icdf < 15 && <AlertTriangle className="h-3.5 w-3.5 text-destructive" />}
@@ -54,7 +54,7 @@ export default function CapitalGiroPage() {
       </div>
 
       {/* Chart: CCC Evolution */}
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <h3 className="text-sm font-semibold text-foreground mb-4 flex items-center gap-2">
           <DollarSign className="h-4 w-4 text-app-financeiro" />
           Evolução do CCC — 12 meses
@@ -75,7 +75,7 @@ export default function CapitalGiroPage() {
       </div>
 
       {/* NCG Evolution */}
-      <div className="rounded-xl border border-border bg-card p-4">
+      <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
         <h3 className="text-sm font-semibold text-foreground mb-4">NCG — Evolução 12 meses</h3>
         <div className="h-[200px]">
           <ResponsiveContainer width="100%" height="100%">

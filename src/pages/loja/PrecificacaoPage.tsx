@@ -67,7 +67,7 @@ export default function PrecificacaoPage() {
 
       {/* KPI Row */}
       <div className="grid grid-cols-3 gap-3">
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1">IAP (Aderência)</p>
           <p className={cn("text-2xl font-bold", getIAPColor(iap))}>{formatPercent(iap)}</p>
           <div className="mt-2 h-2 rounded-full bg-muted overflow-hidden">
@@ -77,12 +77,12 @@ export default function PrecificacaoPage() {
             />
           </div>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1">SKUs PAC</p>
           <p className={cn("text-2xl font-bold", pacCount > 0 ? "text-destructive" : "text-success")}>{pacCount}</p>
           <p className="text-[10px] text-muted-foreground mt-1">Preço abaixo do custo</p>
         </div>
-        <div className="rounded-xl border border-border bg-card p-4">
+        <div className="rounded-xl border border-border bg-card p-4 transition-all duration-200 hover:border-white/10 hover:shadow-lg hover:shadow-black/20 hover:scale-[1.01]">
           <p className="text-[10px] text-muted-foreground uppercase tracking-wider mb-1">Total SKUs</p>
           <p className="text-2xl font-bold text-foreground">{skuData.length}</p>
           <p className="text-[10px] text-muted-foreground mt-1">Monitorados</p>
