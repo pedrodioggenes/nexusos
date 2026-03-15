@@ -1,0 +1,1 @@
+ALTER TABLE public.user_roles ADD COLUMN IF NOT EXISTS must_change_password boolean NOT NULL DEFAULT true;

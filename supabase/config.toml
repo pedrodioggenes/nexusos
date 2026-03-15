@@ -1,0 +1,49 @@
+project_id = "iuxghkrffwqzmobcvxyp"
+
+[functions.ia-chat]
+verify_jwt = false
+
+[functions.create-tenant-user]
+verify_jwt = false
+
+[functions.generate-insight]
+verify_jwt = false
+
+[functions.document-ai-assistant]
+verify_jwt = false
+
+[functions.seed-demo-data]
+verify_jwt = false
+
+[functions.generate-document]
+verify_jwt = false
+
+[functions.generate-title]
+verify_jwt = false
+
+[functions.job-scheduler]
+verify_jwt = false
+
+[functions.check-bootstrap-status]
+verify_jwt = false
+
+[functions.bootstrap-admin]
+verify_jwt = false
+
+[functions.seed-cd]
+verify_jwt = false
+
+[functions.sorteios-participant-auth]
+verify_jwt = false
+
+[functions.sorteios-validate-registration]
+verify_jwt = false
+
+[functions.get-ice-servers]
+verify_jwt = false
+
+[functions.receive-instruction]
+verify_jwt = false
+
+[functions.notify-nos-password-changed]
+verify_jwt = false

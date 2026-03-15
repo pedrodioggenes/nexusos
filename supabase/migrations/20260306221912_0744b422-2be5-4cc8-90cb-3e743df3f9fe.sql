@@ -1,0 +1,1 @@
+ALTER TABLE public.hw_user_layout ADD COLUMN IF NOT EXISTS right_widgets_order JSONB DEFAULT '{}'::jsonb;

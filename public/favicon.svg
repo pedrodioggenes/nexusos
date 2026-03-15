@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none">
+  <!-- HiperWorks Icon - H with inverted triangle -->
+  <!-- Color: Copper #C87941 -->
+  
+  <!-- Grid layout:
+    Row 1: (x1,y1) top-left   (x2,y1) top-right
+    Row 2: (x1,y2) mid-left   (xc,y2) center   (x2,y2) mid-right  
+    Row 3: (x1,y3) bot-left   (x2,y3) bot-right
+    Row 4: (xc,y4) bottom-center (triangle tip)
+  -->
+  
+  <!-- Coordinates -->
+  <!-- x1=156, xc=256, x2=356 -->
+  <!-- y1=80, y2=180, y3=280, y4=370 -->
+  
+  <!-- Vertical lines - left column -->
+  <line x1="156" y1="80" x2="156" y2="280" stroke="#C87941" stroke-width="10" stroke-linecap="round"/>
+  <!-- Vertical lines - right column -->
+  <line x1="356" y1="80" x2="356" y2="280" stroke="#C87941" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Horizontal line - middle row -->
+  <line x1="156" y1="180" x2="356" y2="180" stroke="#C87941" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Diagonal lines - inverted triangle -->
+  <line x1="156" y1="280" x2="256" y2="370" stroke="#C87941" stroke-width="10" stroke-linecap="round"/>
+  <line x1="356" y1="280" x2="256" y2="370" stroke="#C87941" stroke-width="10" stroke-linecap="round"/>
+  
+  <!-- Circles - Row 1 -->
+  <circle cx="156" cy="80" r="18" stroke="#C87941" stroke-width="8" fill="none"/>
+  <circle cx="356" cy="80" r="18" stroke="#C87941" stroke-width="8" fill="none"/>
+  
+  <!-- Circles - Row 2 -->
+  <circle cx="156" cy="180" r="18" stroke="#C87941" stroke-width="8" fill="none"/>
+  <circle cx="256" cy="180" r="14" stroke="#C87941" stroke-width="7" fill="none"/>
+  <circle cx="356" cy="180" r="18" stroke="#C87941" stroke-width="8" fill="none"/>
+  
+  <!-- Circles - Row 3 -->
+  <circle cx="156" cy="280" r="18" stroke="#C87941" stroke-width="8" fill="none"/>
+  <circle cx="356" cy="280" r="18" stroke="#C87941" stroke-width="8" fill="none"/>
+  
+  <!-- Circle - Bottom center (triangle tip) -->
+  <circle cx="256" cy="370" r="16" stroke="#C87941" stroke-width="7" fill="none"/>
+  
+</svg>

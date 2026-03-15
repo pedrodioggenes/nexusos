@@ -1,0 +1,12 @@
+export { LandingHeader } from './LandingHeader';
+export { HeroSection } from './HeroSection';
+export { BentoModules } from './BentoModules';
+export { PlatformStats } from './PlatformStats';
+export { EcosystemFeatures } from './EcosystemFeatures';
+export { HowItWorks } from './HowItWorks';
+export { UseCases } from './UseCases';
+export { SocialProof } from './SocialProof';
+export { TrustSection } from './TrustSection';
+export { FinalCTA } from './FinalCTA';
+export { ArchitectureFooter } from './ArchitectureFooter';
+export { PortalPreview } from './PortalPreview';

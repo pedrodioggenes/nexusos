@@ -1,0 +1,1 @@
+ALTER TABLE public.marketing_executions ADD COLUMN metadata JSONB DEFAULT '{}';

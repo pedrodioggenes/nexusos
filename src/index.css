@@ -1,0 +1,1466 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   NOS Design System - Apple Dark Premium
+   
+   Philosophy:
+   - Every pixel is intentional
+   - Depth through light, not clutter
+   - Silent elegance, loud impact
+   - Animations that feel natural
+   ============================================ */
+
+/* ===== Maximum Text Rendering Quality ===== */
+*, *::before, *::after {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  font-optical-sizing: auto;
+  -webkit-text-size-adjust: 100%;
+}
+
+@layer base {
+  :root {
+    /* ===== Core Colors — Festval Matte Zinc ===== */
+    --background: 0 0% 6%;
+    --foreground: 240 5% 96%;
+
+    /* Surfaces - Layered depth (Zinc scale) */
+    --card: 240 6% 10%;
+    --card-foreground: 240 5% 96%;
+    --card-elevated: 240 4% 13%;
+
+    --popover: 240 6% 10%;
+    --popover-foreground: 240 5% 96%;
+
+    /* Primary: Nexus Brand Red */
+    --primary: 357 76% 35%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 357 76% 45%;
+
+    /* Secondary */
+    --secondary: 240 4% 13%;
+    --secondary-foreground: 240 5% 85%;
+
+    /* Muted */
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+
+    /* Accent: Nexus Brand Yellow */
+    --accent: 45 99% 62%;
+    --accent-foreground: 0 0% 0%;
+    --accent-glow: 45 99% 70%;
+
+    /* Semantic States */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 145 55% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 45 100% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    /* UI Elements */
+    --border: 240 4% 16%;
+    --border-subtle: 240 4% 13%;
+    --input: 240 4% 13%;
+    --ring: 240 4% 30%;
+
+    --radius: 0.5rem;
+
+    /* ===== Spacing Tokens ===== */
+    --space-section: 1.25rem;
+    --space-card: 1rem;
+    --space-group: 0.625rem;
+    --space-element: 0.375rem;
+
+    /* ===== Semantic Surface Tokens ===== */
+    /* Used for consistent theming across all layouts */
+    --surface-base: 0 0% 6%;               /* Main background — #0f0f10 */
+    --surface-elevated: 240 6% 10%;        /* Cards, panels — #18181B */
+    --surface-overlay: 240 6% 10%;         /* Headers, footers, sidebars */
+    --surface-inset: 240 4% 8%;            /* Recessed elements, inputs */
+    
+    /* Text semantic variants */
+    --text-primary: 0 0% 95%;              /* Main text */
+    --text-secondary: 0 0% 70%;            /* Secondary text */
+    --text-muted: 0 0% 50%;                /* Muted/hint text */
+    --text-inverted: 0 0% 8%;              /* Text on light backgrounds */
+    
+    /* Dividers and separators */
+    --divider: 0 0% 100% / 0.06;           /* Standard divider */
+    --divider-strong: 0 0% 100% / 0.12;    /* Emphasized divider */
+
+    /* ===== Sidebar — Festval Matte ===== */
+    --sidebar-background: 240 6% 10%;
+    --sidebar-foreground: 240 5% 65%;
+    --sidebar-primary: 240 5% 96%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 240 4% 16%;
+    --sidebar-accent-foreground: 240 5% 96%;
+    --sidebar-border: 240 4% 16%;
+    --sidebar-ring: 240 4% 30%;
+    --sidebar-muted: 240 5% 45%;
+
+    /* ===== Brand Tokens ===== */
+    --brand-yellow: 45 99% 62%;
+    --brand-red: 357 76% 35%;
+
+    /* ===== Aurora Theme Tokens ===== */
+    --aurora-base: 270 33% 4%;
+    --aurora-purple-dark: 262 40% 16%;
+    --aurora-plum: 280 45% 35%;
+    --aurora-wine: 350 37% 17%;
+    --aurora-violet: 230 35% 35%;
+
+    /* Aurora Highlight Gradient Stops */
+    --aurora-highlight-1: 352 60% 52%;
+    --aurora-highlight-2: 330 40% 45%;
+    --aurora-highlight-3: 280 45% 35%;
+    --aurora-highlight-4: 220 65% 55%;
+
+    /* ===== Aurora 2 Theme Tokens - Masculine/Corporate ===== */
+    --aurora2-base: 215 20% 5%;
+    --aurora2-charcoal: 220 25% 10%;
+    --aurora2-slate: 220 20% 16%;
+    --aurora2-deep-blue: 210 30% 14%;
+    --aurora2-steel: 215 15% 20%;
+
+    /* Aurora 2 Highlight Gradient Stops (Teal → Blue → Indigo → Violet) */
+    --aurora2-highlight-1: 173 58% 50%;
+    --aurora2-highlight-2: 217 91% 60%;
+    --aurora2-highlight-3: 239 84% 67%;
+    --aurora2-highlight-4: 259 70% 65%;
+
+    /* ===== Aurora 3 Theme Tokens - Warm Brand (Harmonizado) ===== */
+    --aurora3-base: 15 6% 4%;
+    --aurora3-charcoal: 20 8% 11%;
+    --aurora3-slate: 18 10% 15%;
+    --aurora3-deep-neutral: 15 8% 10%;
+    --aurora3-steel: 20 8% 18%;
+
+    /* Aurora 3 Highlight Gradient Stops (Âmbar → Coral - SUAVIZADO v2) */
+    --aurora3-highlight-1: 44 75% 56%;    /* âmbar mel (era 92%) */
+    --aurora3-highlight-2: 36 70% 50%;    /* dourado amadeirado (era 88%) */
+    --aurora3-highlight-3: 12 68% 46%;    /* terracota suave (era 85%) */
+    --aurora3-highlight-4: 357 60% 36%;   /* vinho profundo (era 75%) */
+
+    /* Aurora 3 Soft - versão elegante/sutil */
+    --aurora3-soft-amber: 44 45% 55%;     /* âmbar dessaturado */
+    --aurora3-soft-text: 44 50% 65%;      /* cor de texto suave */
+    --aurora3-soft-border: 44 30% 40%;    /* borda discreta */
+
+    /* ===== App Colors - Warm DNA + Maximum Distinguishability ===== */
+    /* Arco expandido 285°→100° (excl. quadrante frio 180°–260°)       */
+    /* Espaçamento ~20–30° + variação agressiva de sat/lum              */
+    
+    --app-ia: 45 85% 55%;             /* ☀️ Ouro vivo — inteligência, flagship */
+    --app-ia-glow: 45 85% 65%;
+    --app-gestao: 35 68% 45%;         /* 🪙 Âmbar escuro — estratégia, visão */
+    --app-gestao-glow: 35 68% 55%;
+    --app-trade: 16 78% 54%;          /* 🟠 Laranja — energia comercial */
+    --app-trade-glow: 16 78% 64%;
+    --app-ofertas: 358 72% 55%;       /* 🔴 Carmesim — urgência, conversão */
+    --app-ofertas-glow: 358 72% 65%;
+    --app-dominio: 24 58% 40%;        /* 🪨 Bronze — autoridade executiva */
+    --app-dominio-glow: 24 58% 50%;
+    --app-rh: 345 58% 60%;            /* 🌸 Rosa quente — calor humano */
+    --app-rh-glow: 345 58% 70%;
+    --app-reposicao: 100 45% 45%;     /* 🌿 Verde musgo — fluxo, abastecimento */
+    --app-reposicao-glow: 100 45% 55%;
+    --app-cd: 30 42% 38%;             /* ☕ Café/umber — solidez, armazém */
+    --app-cd-glow: 30 42% 48%;
+    --app-compras: 78 50% 42%;        /* 🫒 Oliva — aquisição, crescimento */
+    --app-compras-glow: 78 50% 52%;
+    --app-academy: 55 70% 50%;        /* 🟡 Mostarda — conhecimento, iluminação */
+    --app-academy-glow: 55 70% 60%;
+    --app-cliente: 318 48% 55%;       /* 💗 Magenta quente — acolhimento, CRM */
+    --app-cliente-glow: 318 48% 65%;
+    --app-comunidade: 285 38% 55%;    /* 🍇 Ameixa quente — conexão, comunidade */
+    --app-comunidade-glow: 285 38% 65%;
+    --app-pmo: 140 32% 44%;           /* 🌾 Sálvia — governança, controle */
+    --app-pmo-glow: 140 32% 54%;
+    --app-financeiro: 42 72% 48%;     /* 💰 Dourado âmbar — riqueza, resultado */
+    --app-financeiro-glow: 42 72% 58%;
+    --app-loja: 170 55% 42%;          /* 🏪 Teal — ponto de venda, espaço físico */
+    --app-loja-glow: 170 55% 52%;
+    --app-sorteios: 0 80% 50%;        /* 🎲 Vermelho vivo — sorte, promoção */
+    --app-sorteios-glow: 0 80% 60%;
+    --app-console: 44 40% 45%;        /* Bronze neutro — sistema/admin */
+    --app-console-glow: 44 40% 55%;
+
+
+
+    --festval-charcoal: 0 0% 6%;        /* #0f0f10 - Background base */
+    --festval-graphite: 240 5% 10%;     /* #18181B - Surface/Cards */
+    --festval-copper: 25 55% 52%;       /* #C87941 - Accent copper */
+    --festval-copper-hover: 25 55% 42%; /* #b8692f - Copper hover */
+    --festval-copper-subtle: 25 55% 52% / 0.08; /* Copper sutil bg */
+    --festval-ivory: 30 16% 89%;        /* #E8E4DD - Texto principal */
+    --festval-stone: 30 4% 59%;         /* #9a9895 - Texto secundário */
+    --festval-stone-muted: 30 4% 34%;   /* #5a5855 - Texto terciário */
+    --festval-border: 240 6% 17%;       /* #2a2a2f - Border sutil */
+    --festval-surface-elevated: 240 5% 13%; /* #1f1f23 */
+    --festval-footer: 0 0% 4%;          /* #0a0a0b */
+
+    /* ===== Premium Effects ===== */
+    --glow-sm: 0 0 10px;
+    --glow-md: 0 0 20px;
+    --glow-lg: 0 0 40px;
+    
+    --shadow-elevated: 0 4px 20px -4px rgba(0, 0, 0, 0.5), 0 8px 40px -8px rgba(0, 0, 0, 0.3);
+    --shadow-glow-primary: 0 0 40px -10px hsl(var(--primary) / 0.4);
+    --shadow-glow-accent: 0 0 40px -10px hsl(var(--accent) / 0.4);
+
+    /* ===== Timing Functions (Apple-like) ===== */
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+    --spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  /* ===== LIGHT THEME ===== */
+  .light {
+    /* ===== Core Colors ===== */
+    --background: 0 0% 98%;
+    --foreground: 0 0% 8%;
+
+    /* Surfaces - Layered depth */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 8%;
+    --card-elevated: 0 0% 99%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 8%;
+
+    /* Primary: Nexus Brand Red */
+    --primary: 357 76% 40%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 357 76% 50%;
+
+    /* Secondary */
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 20%;
+
+    /* Muted */
+    --muted: 0 0% 92%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Accent: Nexus Brand Yellow */
+    --accent: 45 95% 50%;
+    --accent-foreground: 0 0% 10%;
+    --accent-glow: 45 95% 58%;
+
+    /* Semantic States */
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 145 60% 38%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 45 100% 45%;
+    --warning-foreground: 0 0% 10%;
+
+    /* UI Elements */
+    --border: 0 0% 88%;
+    --border-subtle: 0 0% 92%;
+    --input: 0 0% 94%;
+    --ring: 0 0% 70%;
+
+    /* ===== Semantic Surface Tokens (Light) ===== */
+    --surface-base: 0 0% 98%;              /* Main background */
+    --surface-elevated: 0 0% 100%;         /* Cards, panels */
+    --surface-overlay: 0 0% 97%;           /* Headers, footers, sidebars */
+    --surface-inset: 0 0% 95%;             /* Recessed elements */
+    
+    /* Text semantic variants */
+    --text-primary: 0 0% 8%;
+    --text-secondary: 0 0% 35%;
+    --text-muted: 0 0% 50%;
+    --text-inverted: 0 0% 95%;
+    
+    /* Dividers */
+    --divider: 0 0% 0% / 0.08;
+    --divider-strong: 0 0% 0% / 0.15;
+
+    /* ===== Sidebar ===== */
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 0 0% 35%;
+    --sidebar-primary: 0 0% 10%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 92%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 88%;
+    --sidebar-ring: 0 0% 70%;
+    --sidebar-muted: 0 0% 55%;
+
+    /* ===== Brand Tokens (ajustados para contraste) ===== */
+    --brand-yellow: 45 95% 45%;
+    --brand-red: 357 76% 40%;
+
+    /* ===== Aurora 3 Tokens (Light Mode) ===== */
+    --aurora3-base: 15 6% 96%;
+    --aurora3-charcoal: 20 4% 90%;
+    --aurora3-slate: 18 6% 85%;
+    --aurora3-deep-neutral: 15 4% 92%;
+    --aurora3-steel: 20 4% 82%;
+
+    /* Aurora 3 Highlight Gradient Stops (mais vibrantes para light) */
+    --aurora3-highlight-1: 44 85% 52%;
+    --aurora3-highlight-2: 36 80% 46%;
+    --aurora3-highlight-3: 12 78% 44%;
+    --aurora3-highlight-4: 357 70% 38%;
+
+    /* Aurora 3 Soft (Light) */
+    --aurora3-soft-amber: 44 55% 48%;
+    --aurora3-soft-text: 44 60% 40%;
+    --aurora3-soft-border: 44 40% 70%;
+
+    /* ===== App Colors (Light Mode - contraste WCAG reforçado) ===== */
+    --app-ia: 45 90% 42%;
+    --app-ia-glow: 45 90% 50%;
+    --app-gestao: 35 72% 36%;
+    --app-gestao-glow: 35 72% 44%;
+    --app-trade: 16 82% 42%;
+    --app-trade-glow: 16 82% 50%;
+    --app-ofertas: 358 78% 44%;
+    --app-ofertas-glow: 358 78% 52%;
+    --app-dominio: 24 62% 32%;
+    --app-dominio-glow: 24 62% 40%;
+    --app-rh: 345 62% 48%;
+    --app-rh-glow: 345 62% 56%;
+    --app-reposicao: 100 50% 36%;
+    --app-reposicao-glow: 100 50% 44%;
+    --app-cd: 30 46% 30%;
+    --app-cd-glow: 30 46% 38%;
+    --app-compras: 78 55% 34%;
+    --app-compras-glow: 78 55% 42%;
+    --app-academy: 55 75% 40%;
+    --app-academy-glow: 55 75% 48%;
+    --app-cliente: 318 52% 42%;
+    --app-cliente-glow: 318 52% 50%;
+    --app-comunidade: 285 42% 44%;
+    --app-comunidade-glow: 285 42% 52%;
+    --app-pmo: 140 36% 36%;
+    --app-pmo-glow: 140 36% 44%;
+    --app-sorteios: 0 85% 42%;
+    --app-sorteios-glow: 0 85% 50%;
+    --app-console: 44 45% 38%;
+    --app-console-glow: 44 45% 46%;
+
+    /* ===== Premium Effects (Light) ===== */
+    --shadow-elevated: 0 4px 20px -4px rgba(0, 0, 0, 0.1), 0 8px 40px -8px rgba(0, 0, 0, 0.08);
+    --shadow-glow-primary: 0 0 40px -10px hsl(var(--primary) / 0.25);
+    --shadow-glow-accent: 0 0 40px -10px hsl(var(--accent) / 0.25);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Typography - Compact enterprise */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: hsl(var(--foreground));
+  }
+
+  h1 { font-size: 1.75rem; font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; }
+  h2 { font-size: 1.25rem; font-weight: 600; line-height: 1.2; }
+  h3 { font-size: 1rem; font-weight: 600; line-height: 1.3; }
+  h4 { font-size: 0.875rem; font-weight: 500; line-height: 1.4; }
+
+  ::selection {
+    background: hsl(var(--accent) / 0.2);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  /* ===== Premium Card System ===== */
+  .card-base {
+    @apply bg-card rounded-xl border border-border;
+  }
+
+  .card-elevated {
+    background: hsl(var(--card-elevated));
+    @apply rounded-xl border border-border;
+    box-shadow: var(--shadow-elevated);
+  }
+
+  .card-interactive {
+    @apply bg-card rounded-xl border border-border;
+    transition: all 0.3s var(--ease-out-expo);
+  }
+
+  .card-interactive:hover {
+    @apply border-muted-foreground/20;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-elevated);
+  }
+
+  /* ===== Glow Effects ===== */
+  .glow-primary {
+    box-shadow: var(--glow-md) hsl(var(--primary) / 0.3);
+  }
+
+  .glow-accent {
+    box-shadow: var(--glow-md) hsl(var(--accent) / 0.3);
+  }
+
+  .glow-app-gestao {
+    box-shadow: var(--glow-md) hsl(var(--app-gestao) / 0.4);
+  }
+
+  .glow-app-ia {
+    box-shadow: var(--glow-md) hsl(var(--app-ia) / 0.4);
+  }
+
+  .glow-app-ofertas {
+    box-shadow: var(--glow-md) hsl(var(--app-ofertas) / 0.4);
+  }
+
+  .glow-app-trade {
+    box-shadow: var(--glow-md) hsl(var(--app-trade) / 0.4);
+  }
+
+  .glow-app-console {
+    box-shadow: var(--glow-md) hsl(var(--app-console) / 0.4);
+  }
+
+  /* ===== Sidebar Navigation ===== */
+  .sidebar-item {
+    @apply flex items-center gap-2 px-2.5 py-2 rounded-lg text-xs font-medium;
+    transition: all 0.2s var(--ease-out-expo);
+  }
+
+  .sidebar-item-active {
+    @apply bg-secondary text-foreground;
+  }
+
+  .sidebar-item-inactive {
+    @apply text-muted-foreground;
+  }
+
+  .sidebar-item-inactive:hover {
+    @apply text-foreground bg-secondary/50;
+  }
+
+  /* ===== Status Badges ===== */
+  .badge-base {
+    @apply text-xs font-medium px-2.5 py-1 rounded-full;
+  }
+
+  .badge-success {
+    @apply bg-success/10 text-success;
+  }
+
+  .badge-warning {
+    @apply bg-warning/10 text-warning;
+  }
+
+  .badge-error {
+    @apply bg-destructive/10 text-destructive;
+  }
+
+  .badge-neutral {
+    @apply bg-muted text-muted-foreground;
+  }
+
+  /* ===== Premium Buttons ===== */
+  .btn-primary {
+    @apply bg-foreground text-background font-medium;
+    transition: all 0.2s var(--ease-out-expo);
+  }
+
+  .btn-primary:hover {
+    @apply bg-foreground/90;
+    transform: scale(1.02);
+  }
+
+  .btn-primary:active {
+    transform: scale(0.98);
+  }
+
+  .btn-secondary {
+    @apply bg-secondary text-foreground font-medium border border-border;
+    transition: all 0.2s var(--ease-out-expo);
+  }
+
+  .btn-secondary:hover {
+    @apply bg-secondary/80 border-muted-foreground/20;
+  }
+
+  /* ===== Glass Effect ===== */
+  .glass {
+    background: hsl(var(--card) / 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .glass-subtle {
+    background: hsl(var(--card) / 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* ===== Focus States ===== */
+  .focus-ring:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+
+  .focus-glow:focus-visible {
+    @apply outline-none;
+    box-shadow: 0 0 0 2px hsl(var(--background)), 0 0 0 4px hsl(var(--ring)), var(--glow-md) hsl(var(--accent) / 0.2);
+  }
+}
+
+@layer utilities {
+  /* ===== Semantic Surface Utilities ===== */
+  .bg-surface-base { background-color: hsl(var(--surface-base)); }
+  .bg-surface-elevated { background-color: hsl(var(--surface-elevated)); }
+  .bg-surface-overlay { background-color: hsl(var(--surface-overlay)); }
+  .bg-surface-inset { background-color: hsl(var(--surface-inset)); }
+  
+  /* With opacity variants */
+  .bg-surface-overlay\/95 { background-color: hsl(var(--surface-overlay) / 0.95); }
+  .bg-surface-overlay\/90 { background-color: hsl(var(--surface-overlay) / 0.90); }
+  .bg-surface-elevated\/90 { background-color: hsl(var(--surface-elevated) / 0.90); }
+  
+  /* Semantic Text Utilities (renamed to avoid Tailwind conflicts) */
+  .text-on-surface { color: hsl(var(--text-primary)); }
+  .text-on-surface-variant { color: hsl(var(--text-secondary)); }
+  .text-on-surface-muted { color: hsl(var(--text-muted)); }
+  .text-on-surface-inverted { color: hsl(var(--text-inverted)); }
+  
+  /* Semantic Divider Utilities */
+  .border-divider { border-color: hsl(var(--divider)); }
+  .border-divider-strong { border-color: hsl(var(--divider-strong)); }
+  .divide-divider > * + * { border-color: hsl(var(--divider)); }
+  
+  /* ===== App Color Utilities ===== */
+  .text-app-gestao { color: hsl(var(--app-gestao)); }
+  .text-app-ia { color: hsl(var(--app-ia)); }
+  .text-app-ofertas { color: hsl(var(--app-ofertas)); }
+  .text-app-trade { color: hsl(var(--app-trade)); }
+  .text-app-console { color: hsl(var(--app-console)); }
+
+  .bg-app-gestao { background-color: hsl(var(--app-gestao)); }
+  .bg-app-ia { background-color: hsl(var(--app-ia)); }
+  .bg-app-ofertas { background-color: hsl(var(--app-ofertas)); }
+  .bg-app-trade { background-color: hsl(var(--app-trade)); }
+  .bg-app-console { background-color: hsl(var(--app-console)); }
+
+  .border-app-gestao { border-color: hsl(var(--app-gestao)); }
+  .border-app-ia { border-color: hsl(var(--app-ia)); }
+  .border-app-ofertas { border-color: hsl(var(--app-ofertas)); }
+  .border-app-trade { border-color: hsl(var(--app-trade)); }
+  .border-app-console { border-color: hsl(var(--app-console)); }
+
+  .text-app-pmo { color: hsl(var(--app-pmo)); }
+  .bg-app-pmo { background-color: hsl(var(--app-pmo)); }
+  .border-app-pmo { border-color: hsl(var(--app-pmo)); }
+  .glow-app-pmo { box-shadow: var(--glow-md) hsl(var(--app-pmo) / 0.4); }
+
+  .text-app-cd { color: hsl(var(--app-cd)); }
+  .bg-app-cd { background-color: hsl(var(--app-cd)); }
+  .border-app-cd { border-color: hsl(var(--app-cd)); }
+  .glow-app-cd { box-shadow: var(--glow-md) hsl(var(--app-cd) / 0.4); }
+
+  .text-app-cliente { color: hsl(var(--app-cliente)); }
+  .bg-app-cliente { background-color: hsl(var(--app-cliente)); }
+  .border-app-cliente { border-color: hsl(var(--app-cliente)); }
+  .glow-app-cliente { box-shadow: var(--glow-md) hsl(var(--app-cliente) / 0.4); }
+
+  .text-app-compras { color: hsl(var(--app-compras)); }
+  .bg-app-compras { background-color: hsl(var(--app-compras)); }
+  .border-app-compras { border-color: hsl(var(--app-compras)); }
+  .glow-app-compras { box-shadow: var(--glow-md) hsl(var(--app-compras) / 0.4); }
+
+  .text-app-rh { color: hsl(var(--app-rh)); }
+  .bg-app-rh { background-color: hsl(var(--app-rh)); }
+  .border-app-rh { border-color: hsl(var(--app-rh)); }
+  .glow-app-rh { box-shadow: var(--glow-md) hsl(var(--app-rh) / 0.4); }
+
+  .text-app-reposicao { color: hsl(var(--app-reposicao)); }
+  .bg-app-reposicao { background-color: hsl(var(--app-reposicao)); }
+  .border-app-reposicao { border-color: hsl(var(--app-reposicao)); }
+  .glow-app-reposicao { box-shadow: var(--glow-md) hsl(var(--app-reposicao) / 0.4); }
+
+  .text-app-dominio { color: hsl(var(--app-dominio)); }
+  .bg-app-dominio { background-color: hsl(var(--app-dominio)); }
+  .border-app-dominio { border-color: hsl(var(--app-dominio)); }
+  .glow-app-dominio { box-shadow: var(--glow-md) hsl(var(--app-dominio) / 0.4); }
+
+  .text-app-comunidade { color: hsl(var(--app-comunidade)); }
+  .bg-app-comunidade { background-color: hsl(var(--app-comunidade)); }
+  .border-app-comunidade { border-color: hsl(var(--app-comunidade)); }
+  .glow-app-comunidade { box-shadow: var(--glow-md) hsl(var(--app-comunidade) / 0.4); }
+
+  .text-app-academy { color: hsl(var(--app-academy)); }
+  .bg-app-academy { background-color: hsl(var(--app-academy)); }
+  .border-app-academy { border-color: hsl(var(--app-academy)); }
+  .glow-app-academy { box-shadow: var(--glow-md) hsl(var(--app-academy) / 0.4); }
+
+  .text-app-sorteios { color: hsl(var(--app-sorteios)); }
+  .bg-app-sorteios { background-color: hsl(var(--app-sorteios)); }
+  .border-app-sorteios { border-color: hsl(var(--app-sorteios)); }
+  .glow-app-sorteios { box-shadow: var(--glow-md) hsl(var(--app-sorteios) / 0.4); }
+
+  .text-app-financeiro { color: hsl(var(--app-financeiro)); }
+  .bg-app-financeiro { background-color: hsl(var(--app-financeiro)); }
+  .border-app-financeiro { border-color: hsl(var(--app-financeiro)); }
+  .glow-app-financeiro { box-shadow: var(--glow-md) hsl(var(--app-financeiro) / 0.4); }
+
+  .text-app-loja { color: hsl(var(--app-loja)); }
+  .bg-app-loja { background-color: hsl(var(--app-loja)); }
+  .border-app-loja { border-color: hsl(var(--app-loja)); }
+  .glow-app-loja { box-shadow: var(--glow-md) hsl(var(--app-loja) / 0.4); }
+
+  /* ===== Festval Matte Architecture Utilities ===== */
+  .bg-festval-charcoal { background-color: hsl(var(--festval-charcoal)); }
+  .bg-festval-graphite { background-color: hsl(var(--festval-graphite)); }
+  .bg-festval-copper { background-color: hsl(var(--festval-copper)); }
+  .text-festval-ivory { color: hsl(var(--festval-ivory)); }
+  .text-festval-stone { color: hsl(var(--festval-stone)); }
+  .text-festval-copper { color: hsl(var(--festval-copper)); }
+  .border-festval-border { border-color: hsl(var(--festval-border)); }
+  .border-festval-charcoal { border-color: hsl(var(--festval-charcoal)); }
+  .fill-festval-copper { fill: hsl(var(--festval-copper)); }
+
+  /* Festval Typography */
+  .font-serif { font-family: 'Playfair Display', Georgia, serif; }
+
+  .text-brand-yellow {
+    color: hsl(var(--brand-yellow));
+  }
+
+  .text-brand-red {
+    color: hsl(var(--brand-red));
+  }
+
+  /* ===== Premium Scrollbar ===== */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+
+  /* ===== Gradient Text ===== */
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--foreground)) 0%, hsl(var(--muted-foreground)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .text-gradient-accent {
+    background: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--accent-glow)) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* ===== Grid Pattern Background ===== */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(to right, hsl(var(--border-subtle)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border-subtle)) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .bg-grid-pattern-fade {
+    background-image: 
+      linear-gradient(to right, hsl(var(--border-subtle)) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border-subtle)) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black 20%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black 20%, transparent 100%);
+  }
+
+  /* ===== Animation Safe Rendering ===== */
+  .animate-safe {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+  }
+
+  /* ===== Text Render Fix for Animated Elements ===== */
+  .text-render-fix {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ===== Aurora Gradient Utilities ===== */
+  .aurora-gradient {
+    background: linear-gradient(90deg, 
+      hsl(var(--aurora3-highlight-1)) 0%, 
+      hsl(var(--aurora3-highlight-2)) 40%, 
+      hsl(var(--aurora3-highlight-3)) 100%
+    );
+  }
+
+  .aurora-gradient-vertical {
+    background: linear-gradient(180deg, 
+      hsl(var(--aurora3-highlight-1)) 0%, 
+      hsl(var(--aurora3-highlight-2)) 35%, 
+      hsl(var(--aurora3-highlight-3)) 70%, 
+      hsl(var(--aurora3-highlight-4)) 100%
+    );
+  }
+
+  .aurora-border {
+    background: linear-gradient(hsl(var(--aurora3-base)), hsl(var(--aurora3-base))) padding-box,
+                linear-gradient(90deg, 
+                  hsl(var(--aurora3-highlight-1)) 0%, 
+                  hsl(var(--aurora3-highlight-2)) 40%, 
+                  hsl(var(--aurora3-highlight-3)) 100%
+                ) border-box;
+  }
+
+  .aurora-text {
+    background: linear-gradient(90deg, 
+      hsl(var(--aurora3-highlight-1)) 0%, 
+      hsl(var(--aurora3-highlight-2)) 40%, 
+      hsl(var(--aurora3-highlight-3)) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Aurora Focus Ring */
+  .aurora-focus:focus-visible {
+    outline: none;
+    box-shadow: 
+      0 0 0 2px hsl(var(--aurora3-base)),
+      0 0 0 4px hsl(var(--aurora3-highlight-1) / 0.5);
+  }
+
+  /* ===== Accent Soft Utilities (Subtle/Elegant) ===== */
+  .accent-soft-bg {
+    background-color: hsl(var(--aurora3-soft-amber) / 0.12);
+  }
+
+  .accent-soft-border {
+    border-color: hsl(var(--aurora3-soft-border) / 0.35);
+  }
+
+  .accent-soft-text {
+    color: hsl(var(--aurora3-soft-text));
+  }
+
+  /* ===== Apple-Level Component Styles ===== */
+  
+  /* Button Soft - Neutral warm gray with depth (Apple-like) */
+  .aurora-btn-soft {
+    background: linear-gradient(
+      180deg, 
+      hsl(30 8% 22% / 0.6) 0%,
+      hsl(30 6% 18% / 0.5) 100%
+    );
+    border: 1px solid hsl(30 5% 30% / 0.4);
+    border-top-color: hsl(0 0% 100% / 0.08);
+    border-bottom-color: hsl(0 0% 0% / 0.15);
+    box-shadow: 
+      inset 0 1px 0 hsl(0 0% 100% / 0.06),
+      0 1px 2px hsl(0 0% 0% / 0.12),
+      0 4px 12px hsl(0 0% 0% / 0.08);
+  }
+
+  .aurora-btn-soft:hover {
+    background: linear-gradient(
+      180deg, 
+      hsl(30 8% 26% / 0.65) 0%,
+      hsl(30 6% 22% / 0.55) 100%
+    );
+    border-top-color: hsl(0 0% 100% / 0.10);
+    box-shadow: 
+      inset 0 1px 0 hsl(0 0% 100% / 0.08),
+      0 2px 4px hsl(0 0% 0% / 0.15),
+      0 8px 20px hsl(0 0% 0% / 0.10);
+  }
+
+  .aurora-btn-soft:active {
+    background: linear-gradient(
+      180deg, 
+      hsl(30 6% 18% / 0.55) 0%,
+      hsl(30 5% 15% / 0.5) 100%
+    );
+    box-shadow: 
+      inset 0 1px 2px hsl(0 0% 0% / 0.12),
+      0 1px 2px hsl(0 0% 0% / 0.08);
+  }
+
+  /* Button Subtle - Almost invisible with neutral hover */
+  .aurora-btn-subtle {
+    background: transparent;
+    border: 1px solid hsl(0 0% 30% / 0.3);
+    box-shadow: none;
+  }
+
+  .aurora-btn-subtle:hover {
+    background: hsl(30 5% 25% / 0.3);
+    border-color: hsl(30 8% 35% / 0.4);
+    box-shadow: 
+      inset 0 1px 0 hsl(0 0% 100% / 0.04),
+      0 2px 6px hsl(0 0% 0% / 0.08);
+  }
+
+  .aurora-btn-subtle:active {
+    background: hsl(30 5% 20% / 0.35);
+    box-shadow: inset 0 1px 2px hsl(0 0% 0% / 0.08);
+  }
+
+  /* Input Soft - Neutral recessed with depth */
+  .aurora-input-soft {
+    background: linear-gradient(
+      180deg, 
+      hsl(30 5% 10% / 0.5) 0%,
+      hsl(30 8% 13% / 0.4) 100%
+    );
+    border: 1px solid hsl(30 5% 25% / 0.35);
+    border-top-color: hsl(0 0% 0% / 0.2);
+    border-bottom-color: hsl(0 0% 100% / 0.03);
+    box-shadow: 
+      inset 0 2px 4px hsl(0 0% 0% / 0.2),
+      inset 0 1px 0 hsl(0 0% 0% / 0.1);
+  }
+
+  .aurora-input-soft:focus {
+    border-color: hsl(30 8% 35% / 0.45);
+    box-shadow: 
+      inset 0 2px 4px hsl(0 0% 0% / 0.15),
+      inset 0 1px 0 hsl(0 0% 0% / 0.08),
+      0 0 0 2px hsl(0 0% 100% / 0.05);
+  }
+
+  /* Input Minimal - Ultra sutil, sem profundidade */
+  .aurora-input-minimal {
+    background: hsl(30 5% 14% / 0.5);
+    border: 1px solid hsl(30 5% 25% / 0.25);
+  }
+
+  .aurora-input-minimal:focus {
+    border-color: hsl(44 50% 55% / 0.3);
+    background: hsl(30 5% 16% / 0.5);
+  }
+
+  .aurora-input-minimal::placeholder {
+    color: hsl(30 10% 50% / 0.6);
+  }
+
+  /* ===== Premium Focus Ring (Apple-style) ===== */
+  .aurora-premium-focus:focus-visible {
+    outline: none;
+    box-shadow: 
+      0 0 0 2px rgba(32, 30, 35, 1),
+      0 0 0 4px hsl(44 50% 55% / 0.3);
+  }
+
+  /* ===== Portal Auth Styles (Theme-aware) ===== */
+  .input-portal {
+    background: hsl(var(--surface-inset));
+    border: 1px solid hsl(var(--divider));
+    box-shadow: inset 0 1px 2px hsl(var(--background) / 0.2);
+    color: hsl(var(--foreground));
+  }
+
+  .input-portal:focus {
+    border-color: hsl(var(--divider-strong));
+    background: hsl(var(--surface-elevated));
+  }
+
+  .input-portal::placeholder {
+    color: hsl(var(--muted-foreground));
+  }
+
+  .btn-portal {
+    background: hsl(var(--muted));
+    border: 1px solid hsl(var(--divider));
+    box-shadow: inset 0 1px 0 hsl(var(--foreground) / 0.04);
+    color: hsl(var(--foreground));
+  }
+
+  .btn-portal:hover {
+    background: hsl(var(--muted) / 0.8);
+    border-color: hsl(var(--divider-strong));
+  }
+
+  .btn-portal:active {
+    background: hsl(var(--muted) / 0.6);
+    box-shadow: inset 0 1px 2px hsl(var(--background) / 0.1);
+  }
+
+  /* GPU Acceleration for animations */
+  .gpu-accelerated {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  /* ========================================
+     PREMIUM SaaS Dashboard Styles
+     Magic UI / Aceternity UI Aesthetic
+     ======================================== */
+
+  /* Grainy noise texture overlay */
+  .grain-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.3;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+
+  /* Aurora gradient background animated */
+  .aurora-bg-premium {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(135deg, 
+      hsl(var(--background)) 0%, 
+      hsl(var(--surface-base)) 25%, 
+      hsl(var(--background)) 50%, 
+      hsl(var(--surface-base)) 75%, 
+      hsl(var(--background)) 100%);
+    background-size: 400% 400%;
+    animation: aurora-flow 15s ease-in-out infinite;
+  }
+
+  @keyframes aurora-flow {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+
+  /* Solid card — Festval Matte (replaces old glass-card-premium) */
+  .glass-card-premium {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    transition: border-color 0.2s ease;
+  }
+
+  .glass-card-premium:hover {
+    border-color: hsl(var(--border) / 0.8);
+  }
+
+  /* Shimmer effect for cards */
+  @keyframes shimmer-effect {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+
+  .shimmer-container {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .shimmer-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(255,255,255,0.4) 50%, 
+      transparent 100%);
+    transform: translateX(-100%);
+    pointer-events: none;
+  }
+
+  .dark .shimmer-container::before {
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      rgba(255,255,255,0.1) 50%, 
+      transparent 100%);
+  }
+
+  .shimmer-container:hover::before {
+    animation: shimmer-effect 0.8s ease-in-out;
+  }
+
+  /* Premium gradient button - Gestao app */
+  .btn-gradient-gestao {
+    background: linear-gradient(135deg, 
+      hsl(var(--app-gestao)) 0%, 
+      hsl(var(--app-gestao-glow)) 100%);
+    box-shadow: 0 4px 20px -4px hsl(var(--app-gestao) / 0.5);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: white;
+    font-weight: 500;
+  }
+
+  .btn-gradient-gestao:hover {
+    box-shadow: 0 8px 30px -4px hsl(var(--app-gestao) / 0.6);
+    transform: translateY(-1px);
+  }
+
+  .btn-gradient-gestao:active {
+    transform: scale(0.98);
+  }
+
+  /* Status online pulsing */
+  .status-pulse-online {
+    position: relative;
+  }
+
+  .status-pulse-online::before {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    background: hsl(var(--success));
+    animation: pulse-status 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    z-index: -1;
+  }
+
+  @keyframes pulse-status {
+    0%, 100% { 
+      opacity: 0; 
+      transform: scale(1); 
+    }
+    50% { 
+      opacity: 0.5; 
+      transform: scale(1.5); 
+    }
+  }
+
+  /* Premium tooltip glassmorphic */
+  .tooltip-premium {
+    background: hsl(var(--card) / 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.5);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px -8px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+  }
+
+  /* Premium orb glow effect */
+  .orb-glow {
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  /* Progress bar animated fill */
+  .progress-animated {
+    transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Fluid spotlight effect container */
+  .fluid-spotlight {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .fluid-spotlight::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, 
+      hsl(var(--app-gestao) / 0.15) 0%, 
+      transparent 70%);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .fluid-spotlight:hover::before {
+    opacity: 1;
+  }
+
+  /* ============================================
+     BlockNote Editor - Custom Dark Theme Styles
+     ============================================ */
+  
+  /* Main editor container */
+  .demand-rich-editor,
+  .workspace-editor {
+    --bn-colors-editor-text: hsl(var(--foreground));
+    --bn-colors-editor-background: transparent;
+    --bn-colors-menu-text: hsl(var(--foreground));
+    --bn-colors-menu-background: hsl(var(--popover));
+    --bn-colors-tooltip-text: hsl(var(--foreground));
+    --bn-colors-tooltip-background: hsl(var(--popover));
+    --bn-colors-hovered-text: hsl(var(--foreground));
+    --bn-colors-hovered-background: hsl(var(--muted));
+    --bn-colors-selected-text: hsl(var(--foreground));
+    --bn-colors-selected-background: hsl(var(--primary) / 0.2);
+    --bn-colors-disabled-text: hsl(var(--muted-foreground));
+    --bn-colors-disabled-background: hsl(var(--muted));
+    --bn-colors-shadow: rgba(0, 0, 0, 0.3);
+    --bn-colors-border: hsl(var(--border));
+    --bn-colors-side-menu: hsl(var(--muted-foreground));
+    --bn-font-family: inherit;
+  }
+
+  /* BlockNote view container */
+  .demand-rich-editor .bn-container,
+  .workspace-editor .bn-container {
+    background: transparent !important;
+    font-family: inherit !important;
+  }
+
+  /* Editor area */
+  .demand-rich-editor .bn-editor,
+  .workspace-editor .bn-editor {
+    background: transparent !important;
+    color: hsl(var(--foreground));
+    padding: 1rem !important;
+    font-size: 0.95rem !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Block styling */
+  .demand-rich-editor .bn-block-group,
+  .workspace-editor .bn-block-group {
+    margin: 0 !important;
+  }
+
+  .demand-rich-editor .bn-block,
+  .workspace-editor .bn-block {
+    margin: 0.25rem 0 !important;
+  }
+
+  /* Paragraph styling */
+  .demand-rich-editor [data-content-type="paragraph"],
+  .workspace-editor [data-content-type="paragraph"] {
+    color: hsl(var(--foreground)) !important;
+  }
+
+  /* Headings */
+  .demand-rich-editor [data-content-type="heading"],
+  .workspace-editor [data-content-type="heading"] {
+    color: hsl(var(--foreground)) !important;
+    font-weight: 600 !important;
+  }
+
+  /* Inline content - no !important on color to allow BlockNote text colors */
+  .demand-rich-editor .bn-inline-content,
+  .workspace-editor .bn-inline-content {
+    color: hsl(var(--foreground));
+  }
+
+  /* Placeholder text */
+  .demand-rich-editor [data-placeholder]::before,
+  .workspace-editor [data-placeholder]::before {
+    color: hsl(var(--muted-foreground) / 0.6) !important;
+  }
+
+  /* Side menu (drag handle, add block) */
+  .demand-rich-editor .bn-side-menu,
+  .workspace-editor .bn-side-menu {
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+  }
+
+  .demand-rich-editor .bn-side-menu:hover,
+  .workspace-editor .bn-side-menu:hover {
+    opacity: 1;
+  }
+
+  /* Slash menu dropdown */
+  .demand-rich-editor .bn-suggestion-menu,
+  .workspace-editor .bn-suggestion-menu {
+    background: hsl(var(--popover)) !important;
+    border: 1px solid hsl(var(--border)) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+    padding: 0.5rem !important;
+  }
+
+  .demand-rich-editor .bn-suggestion-menu-item,
+  .workspace-editor .bn-suggestion-menu-item {
+    background: transparent !important;
+    color: hsl(var(--foreground)) !important;
+    border-radius: 6px !important;
+    padding: 0.5rem 0.75rem !important;
+  }
+
+  .demand-rich-editor .bn-suggestion-menu-item:hover,
+  .demand-rich-editor .bn-suggestion-menu-item[data-hovered="true"],
+  .workspace-editor .bn-suggestion-menu-item:hover,
+  .workspace-editor .bn-suggestion-menu-item[data-hovered="true"] {
+    background: hsl(var(--muted)) !important;
+  }
+
+  /* Formatting toolbar */
+  .demand-rich-editor .bn-toolbar,
+  .workspace-editor .bn-toolbar {
+    background: hsl(var(--popover)) !important;
+    border: 1px solid hsl(var(--border)) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+    padding: 0.25rem !important;
+    gap: 0.125rem !important;
+  }
+
+  .demand-rich-editor .bn-toolbar button,
+  .workspace-editor .bn-toolbar button {
+    background: transparent !important;
+    color: hsl(var(--foreground)) !important;
+    border-radius: 4px !important;
+  }
+
+  .demand-rich-editor .bn-toolbar button:hover,
+  .workspace-editor .bn-toolbar button:hover {
+    background: hsl(var(--muted)) !important;
+  }
+
+  .demand-rich-editor .bn-toolbar button[data-active="true"],
+  .workspace-editor .bn-toolbar button[data-active="true"] {
+    background: hsl(var(--primary) / 0.2) !important;
+    color: hsl(var(--primary)) !important;
+  }
+
+  /* Image blocks */
+  .demand-rich-editor [data-content-type="image"],
+  .workspace-editor [data-content-type="image"] {
+    margin: 1rem 0 !important;
+  }
+
+  .demand-rich-editor [data-content-type="image"] img,
+  .workspace-editor [data-content-type="image"] img {
+    max-width: 100% !important;
+    border-radius: 8px !important;
+    border: 1px solid hsl(var(--border)) !important;
+  }
+
+  /* Lists */
+  .demand-rich-editor [data-content-type="bulletListItem"],
+  .demand-rich-editor [data-content-type="numberedListItem"],
+  .workspace-editor [data-content-type="bulletListItem"],
+  .workspace-editor [data-content-type="numberedListItem"] {
+    color: hsl(var(--foreground));
+  }
+
+  /* Code blocks */
+  .demand-rich-editor [data-content-type="codeBlock"],
+  .workspace-editor [data-content-type="codeBlock"] {
+    background: hsl(var(--muted)) !important;
+    border-radius: 6px !important;
+    font-family: 'SF Mono', 'Fira Code', monospace !important;
+    padding: 1rem !important;
+    margin: 0.5rem 0 !important;
+  }
+
+  /* Tables */
+  .demand-rich-editor [data-content-type="table"],
+  .workspace-editor [data-content-type="table"] {
+    border-collapse: collapse !important;
+    width: 100% !important;
+    margin: 1rem 0 !important;
+  }
+
+  .demand-rich-editor [data-content-type="table"] td,
+  .demand-rich-editor [data-content-type="table"] th,
+  .workspace-editor [data-content-type="table"] td,
+  .workspace-editor [data-content-type="table"] th {
+    border: 1px solid hsl(var(--border)) !important;
+    padding: 0.5rem 0.75rem !important;
+    color: hsl(var(--foreground));
+  }
+
+  .demand-rich-editor [data-content-type="table"] th,
+  .workspace-editor [data-content-type="table"] th {
+    background: hsl(var(--muted)) !important;
+    font-weight: 600 !important;
+  }
+
+  /* Links */
+  .demand-rich-editor a,
+  .workspace-editor a {
+    color: hsl(var(--primary)) !important;
+    text-decoration: underline !important;
+  }
+
+  /* Selection */
+  .demand-rich-editor ::selection,
+  .workspace-editor ::selection {
+    background: hsl(var(--primary) / 0.3) !important;
+  }
+
+  /* Drag preview */
+  .demand-rich-editor .bn-drag-preview,
+  .workspace-editor .bn-drag-preview {
+    background: hsl(var(--card)) !important;
+    border: 1px solid hsl(var(--border)) !important;
+    border-radius: 8px !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* Ensure images display properly as images, not as text URLs */
+  .demand-rich-editor .bn-image-wrapper,
+  .workspace-editor .bn-image-wrapper {
+    display: block !important;
+  }
+
+  .demand-rich-editor .bn-image-wrapper img,
+  .workspace-editor .bn-image-wrapper img {
+    display: block !important;
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  /* Fix for file upload rendering */
+  .demand-rich-editor [data-content-type="file"],
+  .workspace-editor [data-content-type="file"] {
+    background: hsl(var(--muted)) !important;
+    border: 1px solid hsl(var(--border)) !important;
+    border-radius: 8px !important;
+    padding: 0.75rem 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.5rem !important;
+    margin: 0.5rem 0 !important;
+  }
+}
+
+/* ============================================
+   NexusDesk Settings Utility Classes
+   ============================================ */
+
+/* Reduce motion — disables all animations */
+.hw-reduce-motion * {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+
+/* High contrast — stronger borders and text */
+.hw-high-contrast {
+  --hw-border-alpha: 0.4;
+}
+.hw-high-contrast * {
+  border-color: rgba(161, 161, 170, var(--hw-border-alpha, 0.15)) !important;
+}
+.hw-high-contrast p,
+.hw-high-contrast span,
+.hw-high-contrast h1,
+.hw-high-contrast h2,
+.hw-high-contrast h3,
+.hw-high-contrast h4 {
+  filter: contrast(1.15);
+}
+
+/* ─── Light Theme ─── */
+.hw-theme-light {
+  filter: invert(1) hue-rotate(180deg);
+}
+.hw-theme-light img,
+.hw-theme-light video,
+.hw-theme-light [data-no-invert],
+.hw-theme-light .avatar-image,
+.hw-theme-light [class*="AvatarImage"],
+.hw-theme-light emoji {
+  filter: invert(1) hue-rotate(180deg); /* cancel out parent invert */
+}
+
+/* ─── Density — compact ─── */
+.hw-density-compact {
+  --hw-spacing-xs: 0.125rem;
+  --hw-spacing-sm: 0.25rem;
+  --hw-spacing-md: 0.375rem;
+  --hw-spacing-lg: 0.5rem;
+}
+.hw-density-compact .space-y-2 > * + * { margin-top: 0.375rem; }
+.hw-density-compact .space-y-2\.5 > * + * { margin-top: 0.5rem; }
+.hw-density-compact .space-y-3 > * + * { margin-top: 0.5rem; }
+.hw-density-compact .gap-2 { gap: 0.375rem; }
+.hw-density-compact .gap-3 { gap: 0.5rem; }
+.hw-density-compact .p-3 { padding: 0.5rem; }
+.hw-density-compact .p-4 { padding: 0.625rem; }
+.hw-density-compact .py-2 { padding-top: 0.375rem; padding-bottom: 0.375rem; }
+.hw-density-compact .py-3 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.hw-density-compact .text-sm { font-size: 0.8125rem; }
+.hw-density-compact .text-xs { font-size: 0.6875rem; }
+
+/* ─── Density — comfortable ─── */
+.hw-density-comfortable {
+  --hw-spacing-xs: 0.375rem;
+  --hw-spacing-sm: 0.625rem;
+  --hw-spacing-md: 0.875rem;
+  --hw-spacing-lg: 1.25rem;
+}
+.hw-density-comfortable .space-y-2 > * + * { margin-top: 0.625rem; }
+.hw-density-comfortable .space-y-2\.5 > * + * { margin-top: 0.75rem; }
+.hw-density-comfortable .space-y-3 > * + * { margin-top: 1rem; }
+.hw-density-comfortable .gap-2 { gap: 0.625rem; }
+.hw-density-comfortable .gap-3 { gap: 0.875rem; }
+.hw-density-comfortable .p-3 { padding: 0.875rem; }
+.hw-density-comfortable .p-4 { padding: 1.125rem; }
+.hw-density-comfortable .py-2 { padding-top: 0.625rem; padding-bottom: 0.625rem; }
+.hw-density-comfortable .py-3 { padding-top: 0.875rem; padding-bottom: 0.875rem; }
+
+/* ─── NexusDesk Embedded Page Overrides ───────────────────── */
+/* Neutralize PremiumAuroraBackground fixed positioning inside embedded container */
+.hw-embedded-container .aurora-bg-premium {
+  position: absolute;
+  background: none;
+  animation: none;
+}
+.hw-embedded-container .orb-glow {
+  display: none;
+}
+/* Constrain the page wrapper to fill available space instead of min-h-full */
+.hw-embedded-container > div > div > div[class*="min-h-full"] {
+  min-height: 0;
+  height: 100%;
+}
+
+/* === Scrollbar hide utility for snap-scroll carousels === */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
